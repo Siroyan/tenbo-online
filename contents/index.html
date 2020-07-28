@@ -14,71 +14,20 @@
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 
-        <title>Hello, world!</title>
+        <title>tenbo-online</title>
     </head>
     <body>
         <div class="container p-4">
-            <!-- 点数表示エリア -->
-            <div class="py-3 text-center">
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-primary">東</span><span class="display-3 tenbo" id="e">25000</span>
-                </div>
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-success">南</span><span class="display-3 tenbo" id="s">25000</span>
-                </div>
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-warning">西</span><span class="display-3 tenbo" id="w">25000</span>
-                </div>
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-danger">北</span><span class="display-3 tenbo" id="n">25000</span>
-                </div>
+            <div class="text-center mb-2">
+                <span class="h2">点棒オンライン</span>
+                <p class="mt-2">
+                    友達の家で麻雀！でも点棒のやり取りめんどくさい...
+                    そんな悩みを解決します！
+                </p>
             </div>
-            <!-- 点数やりとりエリア -->
             <div class="text-center">
-                <form>
-                    <!-- 点棒を渡す側のラジオボタン -->
-                    <div class="text-center">点棒を渡す人</div>
-                    <div class="form-check btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <label class="btn btn-primary btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option1" autocomplete="off"> 東
-                        </label>
-                        <label class="btn btn-success btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option2" autocomplete="off"> 南
-                        </label>
-                        <label class="btn btn-warning btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option3" autocomplete="off"> 西
-                        </label>
-                        <label class="btn btn-danger btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option3" autocomplete="off"> 北
-                        </label>
-                    </div>
-                    
-                    <!-- 点棒をもらう側のラジオボタン -->
-                    <div>
-                        点棒を貰う人
-                    </div>
-                    <div class="form-check btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <label class="btn btn-primary btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option1" autocomplete="off"> 東
-                        </label>
-                        <label class="btn btn-success btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option2" autocomplete="off"> 南
-                        </label>
-                        <label class="btn btn-warning btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option3" autocomplete="off"> 西
-                        </label>
-                        <label class="btn btn-danger btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option3" autocomplete="off"> 北
-                        </label>
-                    </div>
-
-                    <!-- 点数 -->
-                    <div class="form-group mb-4">
-                        <label for="tenboValue">何点払う？</label>
-                        <input type="number" class="form-control-lg text-center" id="tenboValue" placeholder="7700">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">点棒を渡す</button>
+                <form action="https://imjvr2oxe1.execute-api.ap-northeast-1.amazonaws.com/dev/taku" method="POST">
+                    <button class="btn btn-success">卓を開く</button>
                 </form>
             </div>
         </div>
