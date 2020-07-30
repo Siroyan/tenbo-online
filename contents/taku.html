@@ -12,12 +12,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
         <!-- Favicon -->
         <link rel="icon" href="favicon.ico">
-        <title>Hello, world!</title>
+        <title>卓</title>
     </head>
     <body>
         <div class="container p-4">
             <div class="text-center">
-                <span id="takuId" class="h4">XXXXXXXXXXXXXXXXXXXXXXX</span>
+                <span id="takuId" class="h4"></span>
             </div>
             <!-- 点数表示エリア -->
             <div class="py-3 text-center">
@@ -35,22 +35,22 @@
                 </div>
             </div>
             <!-- 点数やりとりエリア -->
-            <div class="text-center">
+            <div class="text-center my-2">
                 <form id = "tenboSwitchingForm">
                     <!-- 点棒を渡す側のラジオボタン -->
                     <div class="text-center">点棒を渡す人</div>
                     <div class="form-check btn-group btn-group-toggle mb-4" id = "transferForm" data-toggle="buttons">
                         <label class="btn btn-primary btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option1" autocomplete="off" value="e" checked> 東
+                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="e" checked> 東
                         </label>
                         <label class="btn btn-success btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option2" autocomplete="off" value="s"> 南
+                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="s"> 南
                         </label>
                         <label class="btn btn-warning btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option3" autocomplete="off" value="w"> 西
+                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="w"> 西
                         </label>
                         <label class="btn btn-danger btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" id="option3" autocomplete="off" value="n"> 北
+                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="n"> 北
                         </label>
                     </div>
                     
@@ -58,16 +58,16 @@
                     <div class="text-center">点棒を貰う人</div>
                     <div class="form-check btn-group btn-group-toggle mb-4" id = "receiverForm" data-toggle="buttons">
                         <label class="btn btn-primary btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option1" autocomplete="off" value="e"> 東
+                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="e"> 東
                         </label>
                         <label class="btn btn-success btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option2" autocomplete="off" value="s" checked> 南
+                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="s" checked> 南
                         </label>
                         <label class="btn btn-warning btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option3" autocomplete="off" value="w"> 西
+                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="w"> 西
                         </label>
                         <label class="btn btn-danger btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" id="option3" autocomplete="off" value="n"> 北
+                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="n"> 北
                         </label>
                     </div>
 
@@ -80,6 +80,13 @@
                     <button type="submit" class="btn btn-primary" onclick="switchPoint();">点棒を渡す</button>
                 </form>
             </div>
+            <!-- QRコード関連 -->
+            <div class="text-center">
+                <div class="mt-4">
+                    この卓のQRコード
+                </div>
+                <div id = "qrcodeImage"></div>
+            </div>
         </div>
 
         <!-- Optional JavaScript -->
@@ -87,6 +94,8 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script> 
         <script src="js/taku.js"></script>
     </body>
 </html>

@@ -1,6 +1,16 @@
 "use strict"
 
-const takuId = sessionStorage.getItem('takuId');
+let takuId = "";
+
+if (sessionStorage.getItem('takuId') !== null) {
+    takuId = sessionStorage.getItem('takuId');
+} else {
+    takuId = getParam("takuId");
+    sessionStorage.setItem('takuId', takuId);
+}
+
+console.log(takuId);
+
 const apiUrl = "https://imjvr2oxe1.execute-api.ap-northeast-1.amazonaws.com/dev/taku/" + takuId;
 
 window.onload = () => {
@@ -8,6 +18,13 @@ window.onload = () => {
     document.getElementById("takuId").textContent = takuId;
     // 最新の卓情報に更新
     getTakuInfo();
+
+    $(function(){
+        var qrtext = `http://tenbo-online-tenboonlineiod5e36fd8-2zqc4ayjhioi.s3-website-ap-northeast-1.amazonaws.com/taku.html?takuId=${takuId}`;
+        var utf8qrtext = unescape(encodeURIComponent(qrtext));
+        $("#qrcodeImage").html("");
+        $("#qrcodeImage").qrcode({text:utf8qrtext}); 
+    });
 };
 
 function getTakuInfo() {
@@ -53,4 +70,14 @@ function switchPoint() {
         .catch((error) => {
         // エラー処理 後で書く
         });
+}
+
+function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
