@@ -11,7 +11,8 @@ class TenboOnlineStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         bucket = s3.Bucket(
-            self, "tenbo-online.io",
+            self,"tenbo-online.net",
+            bucket_name = "tenbo-online.net",
             website_index_document = "index.html",
             public_read_access = True,
             removal_policy = core.RemovalPolicy.DESTROY
