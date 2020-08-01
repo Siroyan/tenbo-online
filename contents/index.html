@@ -15,18 +15,60 @@
         <title>tenbo-online</title>
     </head>
     <body>
-        <div class="container p-4">
-            <div class="text-center mb-2">
-                <span class="h2">点棒オンライン</span>
-                <p class="mt-2">
-                    友達の家で麻雀！でも点棒のやり取りめんどくさい...
-                    そんな悩みを解決します！
-                </p>
-            </div>
-            <div class="text-center">
-                <button class="btn btn-success" onclick="generateTaku();">卓を開く</button>
-            </div>
-        </div>
+        <main>
+            <!-- Header -->
+            <header class="p-4 bg-success">
+                <div class="container text-center">
+                    <span class="h2 text-white">点棒オンライン</span>
+                </div>
+            </header>
+
+            <!-- Catch Parag -->
+            <section class="p-4 bg-white">
+                <div class="container text-center">
+                    <p>
+                        友達の家で麻雀！でも点棒のやり取りめんどくさい...
+                        そんな悩みを解決します！
+                    </p>
+                    <button class="btn btn-lg btn-warning" onclick="generateTaku();">卓を開く</button>
+                </div>
+            </section>
+
+            <!-- How to use text -->
+            <section class="p-4 bg-light">
+                <div class="container text-center">
+                    <div class="h2 p-2">使い方</div>
+                    
+                    <div class="h5 text-left">1 卓の作成</div>
+                    <p class="text-left">同卓の誰か一人が、上部の黄色のボタンを押して下さい。点数が表示された画面に遷移します。</p>
+
+                    <div class="h5 text-left">2 卓へ参加</div>
+                    <p class="text-left">他の人は、卓を作成した人の画面に表示されているQRコードを読み取り、卓に参加して下さい。</p>
+
+                    <div class="h2 p-2">注意事項</div>
+                    
+                    <div class="h5 text-left">卓の情報の保持期間</div>
+                    <p class="text-left">卓の点数情報などは、数日で消去されます。</p>
+
+                    <div class="h5 text-left">不具合など</div>
+                    <p class="text-left">
+                        このサービスは現在α版になります。不具合など発生いたしましたら、製作者までご連絡ください。
+                    </p>
+                    
+                    <div class="h5 text-left">免責事項</div>
+                    <p class="text-left">
+                        また、このサービスを利用した事により利用者様が被った損害に対し、製作者は一切責任を追わないものとします。
+                    </p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center p-4 bg-secondary">
+                <span class="h6 text-white">
+                    Copyright 2020 Siroyan All Rights Reserved.
+                </span>
+            </footer>
+        </main>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
