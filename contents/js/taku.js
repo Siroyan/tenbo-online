@@ -20,7 +20,7 @@ window.onload = () => {
     getTakuInfo();
 
     $(function(){
-        var qrtext = `http://tenbo-online-tenboonlineiod5e36fd8-2zqc4ayjhioi.s3-website-ap-northeast-1.amazonaws.com/taku.html?takuId=${takuId}`;
+        var qrtext = `http://tenbo-online.net/taku.html?takuId=${takuId}`;
         var utf8qrtext = unescape(encodeURIComponent(qrtext));
         $("#qrcodeImage").html("");
         $("#qrcodeImage").qrcode({text:utf8qrtext}); 
