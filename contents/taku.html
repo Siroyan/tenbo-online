@@ -15,79 +15,99 @@
         <title>卓</title>
     </head>
     <body>
-        <div class="container p-4">
-            <div class="text-center">
-                <span id="takuId" class="h4"></span>
-            </div>
-            <!-- 点数表示エリア -->
-            <div class="py-3 text-center">
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-primary">東</span><span class="display-3 tenbo" id="eTenbo">0</span>
-                </div>
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-success">南</span><span class="display-3 tenbo" id="sTenbo">0</span>
-                </div>
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-warning">西</span><span class="display-3 tenbo" id="wTenbo">0</span>
-                </div>
-                <div class="zyanshi mb-2">
-                    <span class="display-3 pr-4 text-danger">北</span><span class="display-3 tenbo" id="nTenbo">0</span>
-                </div>
-            </div>
-            <!-- 点数やりとりエリア -->
-            <div class="text-center my-2">
-                <form id = "tenboSwitchingForm">
-                    <!-- 点棒を渡す側のラジオボタン -->
-                    <div class="text-center">点棒を渡す人</div>
-                    <div class="form-check btn-group btn-group-toggle mb-4" id = "transferForm" data-toggle="buttons">
-                        <label class="btn btn-primary btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="e" checked> 東
-                        </label>
-                        <label class="btn btn-success btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="s"> 南
-                        </label>
-                        <label class="btn btn-warning btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="w"> 西
-                        </label>
-                        <label class="btn btn-danger btn-lg">
-                            <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="n"> 北
-                        </label>
-                    </div>
-                    
-                    <!-- 点棒をもらう側のラジオボタン -->
-                    <div class="text-center">点棒を貰う人</div>
-                    <div class="form-check btn-group btn-group-toggle mb-4" id = "receiverForm" data-toggle="buttons">
-                        <label class="btn btn-primary btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="e"> 東
-                        </label>
-                        <label class="btn btn-success btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="s" checked> 南
-                        </label>
-                        <label class="btn btn-warning btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="w"> 西
-                        </label>
-                        <label class="btn btn-danger btn-lg">
-                            <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="n"> 北
-                        </label>
-                    </div>
 
-                    <!-- 点数 -->
-                    <div class="text-center">何点渡す？</div>
-                    <div class="form-group mb-4">
-                        <input type="number" class="form-control-lg text-center"  name="tenboValue" id="tenboValue" placeholder="7700">
-                    </div>
+        <!-- Header -->
+        <header class="p-4 bg-success">
+            <div class="container text-center">
+                <span class="h2 text-white">点棒オンライン</span>
+            </div>
+        </header>
 
-                    <button type="submit" class="btn btn-primary" onclick="switchPoint();">点棒を渡す</button>
-                </form>
-            </div>
-            <!-- QRコード関連 -->
-            <div class="text-center">
-                <div class="mt-4">
-                    この卓のQRコード
+        <main>
+            <div class="container p-4">
+                <div class="text-center">
+                    <span class="h4">この卓のID</span>
                 </div>
-                <div id = "qrcodeImage"></div>
+                <div class="text-center">
+                    <span id="takuId" class="h6">XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</span>
+                </div>
+                <!-- 点数表示エリア -->
+                <div class="py-3 text-center">
+                    <div class="zyanshi mb-2">
+                        <span class="display-3 pr-4 text-primary">東</span><span class="display-3 tenbo" id="eTenbo">0</span>
+                    </div>
+                    <div class="zyanshi mb-2">
+                        <span class="display-3 pr-4 text-success">南</span><span class="display-3 tenbo" id="sTenbo">0</span>
+                    </div>
+                    <div class="zyanshi mb-2">
+                        <span class="display-3 pr-4 text-warning">西</span><span class="display-3 tenbo" id="wTenbo">0</span>
+                    </div>
+                    <div class="zyanshi mb-2">
+                        <span class="display-3 pr-4 text-danger">北</span><span class="display-3 tenbo" id="nTenbo">0</span>
+                    </div>
+                </div>
+                <!-- 点数やりとりエリア -->
+                <div class="text-center my-2">
+                    <form id = "tenboSwitchingForm">
+                        <!-- 点棒を渡す側のラジオボタン -->
+                        <div class="text-center">点棒を渡す人</div>
+                        <div class="form-check btn-group btn-group-toggle mb-4" id = "transferForm" data-toggle="buttons">
+                            <label class="btn btn-primary btn-lg">
+                                <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="e" checked> 東
+                            </label>
+                            <label class="btn btn-success btn-lg">
+                                <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="s"> 南
+                            </label>
+                            <label class="btn btn-warning btn-lg">
+                                <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="w"> 西
+                            </label>
+                            <label class="btn btn-danger btn-lg">
+                                <input type="radio" class="form-check-input" name="transfer" autocomplete="off" value="n"> 北
+                            </label>
+                        </div>
+                        
+                        <!-- 点棒をもらう側のラジオボタン -->
+                        <div class="text-center">点棒を貰う人</div>
+                        <div class="form-check btn-group btn-group-toggle mb-4" id = "receiverForm" data-toggle="buttons">
+                            <label class="btn btn-primary btn-lg">
+                                <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="e"> 東
+                            </label>
+                            <label class="btn btn-success btn-lg">
+                                <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="s" checked> 南
+                            </label>
+                            <label class="btn btn-warning btn-lg">
+                                <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="w"> 西
+                            </label>
+                            <label class="btn btn-danger btn-lg">
+                                <input type="radio" class="form-check-input" name="receiver" autocomplete="off" value="n"> 北
+                            </label>
+                        </div>
+    
+                        <!-- 点数 -->
+                        <div class="text-center">何点渡す？</div>
+                        <div class="form-group mb-4">
+                            <input type="number" class="form-control-lg text-center"  name="tenboValue" id="tenboValue" placeholder="7700">
+                        </div>
+    
+                        <button type="submit" class="btn btn-primary" onclick="switchPoint();">点棒を渡す</button>
+                    </form>
+                </div>
+                <!-- QRコード関連 -->
+                <div class="text-center">
+                    <div class="mt-4">
+                        この卓のQRコード
+                    </div>
+                    <div id = "qrcodeImage"></div>
+                </div>
             </div>
-        </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center p-4 bg-secondary">
+            <span class="h6 text-white">
+                Copyright 2020 Siroyan All Rights Reserved.
+            </span>
+        </footer>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
